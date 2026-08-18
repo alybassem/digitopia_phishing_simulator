@@ -831,4 +831,4 @@ initRun();
 
 // safe hook for homepage button if present
 const homeBtn = $('return_to_homepage');
-if (homeBtn) homeBtn.addEventListener('click', () => { window.location.href = 'homepage.html'; });
+if (homeBtn) homeBtn.addEventListener('click', () => { window.location.href = 'index.html'; });
