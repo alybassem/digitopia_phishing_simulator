@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar-EG" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>محاكي التصيّد</title>
+
+  <!-- Arabic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="app-header">
+      <div class="logo">🎣</div>
+      <div>
+        <h1>محاكي التصيّد</h1>
+        <p>تعلم تفرّق بين الرسائل الحقيقية والمزيفة — اختبر نفسك دلوقتي!</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- MAIN QUIZ -->
+      <div>
+        <div class="card quiz">
+          <div class="meta">
+            <div class="badge" id="badge-level">مستوى: سهل</div>
+            <div id="meta-right">
+              <span id="progressText">0 / 0</span>
+              &nbsp;•&nbsp;
+              <span id="scoreText">النقط: 0</span>
+            </div>
+          </div>
+
+          <div class="message" id="messageCard" aria-live="polite">
+            <div class="sender" id="mFrom">—</div>
+            <div class="type" id="mType">—</div>
+            <div id="mBody">—</div>
+            <div class="url" id="mUrl" style="display:none"></div>
+          </div>
+
+          <div class="controls">
+            <button class="btn green" id="legitBtn">حقيقي ✅</button>
+            <button class="btn red" id="fakeBtn">مزيف ❌</button>
+            <button class="btn other small" id="nextBtn" style="display:none">اللي بعده ↻</button>
+            <button class="btn other small" id="showScoreBtn" style="display:none">شوف النتيجة 📊</button>
+            <button class="btn other small" id="restartBtn" style="display:none">عيد الاختبار ↺</button>
+
+            <!-- NEW: review mistakes button (hidden until showScore) -->
+            <button class="btn other small" id="reviewBtn" style="display:none">📋 راجع الأخطاء</button>
+          </div>
+
+          <div id="feedback" class="feedback" role="status" aria-live="polite">
+            <div class="title" id="resultTitle"></div>
+            <div id="resultExplain" style="color:var(--muted)"></div>
+          </div>
+        </div>
+
+        <footer>
+          <small>ملاحظة: أمثلة تعليمية فقط — لا تضغط على أي روابط حقيقية أو ترسل معلومات حساسة.</small>
+        </footer>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="card stat">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="color:var(--muted)">الاجابات الصح</div>
+              <div class="score-big" id="scoreBadge">0 / 10</div>
+            </div>
+            <div style="text-align:left">
+              <div style="color:var(--muted)">وقت</div>
+              <div id="timerDisplay">—</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:0.95rem">
+              <div>عدد الأسءلة المزيفة</div><div id="phishCount">0</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;color:var(--muted);font-size:0.95rem">
+              <div>عدد الأسءلة الحقيقية</div><div id="realCount">0</div>
+            </div>
+            <div style="margin-top:10px" class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          </div>
+        </div>
+
+        <div class="card stat">
+          <div style="color:var(--muted)">ملاحظات سريعة</div>
+          <ul style="margin:8px 0 0 0; padding-left:18px; color:var(--muted); line-height:1.6">
+            <li>افحص دومين الرابط قبل الضغط</li>
+            <li>لا تشارك كلمات السر أو رموز التحقق</li>
+            <li>تحقق من رقم المرسل وطرق الاتصال الرسمية</li>
+          </ul>
+        </div>
+        <div>
+          <button class="btn other rtrn" id="return_to_homepage"> ◀ الصفحة الرئيسية </button>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script src="scenarios.js"></script>
+</body>
+</html>
+
