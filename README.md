@@ -29,7 +29,7 @@ Then visit `http://localhost:8000/homepage.html`.
 ## Project structure
 
 ```
-homepage.html     — landing page
+index.html     — landing page
 learnmore.html     — "learn more" info page
 simulation.html    — the quiz/game itself
 scenarios.js        — all phishing/legit message scenarios + game logic
